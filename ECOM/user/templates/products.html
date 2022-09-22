@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Chamb - Responsive E-commerce HTML5 Template</title>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--enable mobile device-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!--fontawesome css-->
+      <link rel="stylesheet" href="/static/css/csss/font-awesome.min.css">
+      <!--bootstrap css-->
+      <link rel="stylesheet" href="/static/css/csss/bootstrap.min.css">
+      <!--animate css-->
+      <link rel="stylesheet" href="/static/css/csss/animate-wow.css">
+      <!--main css-->
+      <link rel="stylesheet" href="/static/css/csss/style.css">
+      <link rel="stylesheet" href="/static/css/csss/bootstrap-select.min.css">
+     
+      <!--responsive css-->
+      <link rel="stylesheet" href="/static/css/csss/responsive.css">
+   </head>
+   <body>
+    
+      <!-- Modal -->
+      <div class="modal fade lug" id="myModal" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Change</h4>
+               </div>
+               <div class="modal-body">
+                  <ul>
+                     <li><a href="#"><img src="/static/images/productimage/flag-up-1.png" alt="" /> United States</a></li>
+                     <li><a href="#"><img src="/static/images/productimage/flag-up-2.png" alt="" /> France </a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="sidebar" class="top-nav">
+         <ul id="sidebar-nav" class="sidebar-nav">
+            <li><a href="#">Help</a></li>
+            <li><a href="howitworks.html">How it works</a></li>
+            <li><a href="#">chamb for Business</a></li>
+         </ul>
+      </div>
+      <div class="page-content-product">
+         <div class="main-product">
+            <div class="container">
+               <div class="row clearfix">
+                  <div class="find-box">
+                     <h1>Find your product here.</h1>
+                     <h4>It has never been easier.</h4>
+                  </div>
+               </div>
+               <div class="row clearfix">
+                  {% for product in products %}
+                  <div class="col-lg-3 col-sm-6 col-md-3">
+                     <a href="/product_details/{{product.slug}}/">
+                        <div class="box-img">
+                           <h4>{{product.title}}</h4>
+                           <img src="/{{product.product_image}}" alt="" />
+                     <a href="/addtocart/{{product.id}}/" class="btn btn-primary shadow px-5 py-2">Add to Cart</a>
+                     <a href="/addtocart/{{product.id}}/" class="btn btn-primary shadow px-5 py-2" style=" background:yellow; display:block; width:100px;margin:auto;color:black; margin-top:2px;">Buy now</a>
+
+                        </div>                        
+                     </a>
+                 
+                  </div>
+                  {% endfor %}
+                 
+               </div>
+            </div>
+         </div>
+      </div>
+
+      
+        <!--main js--> 
+        <script src="/static/js/jss/jquery-1.12.4.min.js"></script> 
+        <!--bootstrap js--> 
+        <script src="/static/js/jss/bootstrap.min.js"></script> 
+        <script src="/static/js/jss/bootstrap-select.min.js"></script>
+       
+        <script src="/static/js/jss/wow.min.js"></script> 
+        <!--custom js--> 
+        <script src="/static/js/jss/custom.js"></script>
+   </body>
+</html>

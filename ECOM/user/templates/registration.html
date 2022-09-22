@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}Registration{% endblock title %}
+{% block main_content %}
+<div class="container">
+ <div class="row my-3">
+  <div class="col-sm-6 offset-sm-3">
+   <h3>Registration</h3>
+   <hr>
+
+   <form action="/add_registration/" method="post" novalidate class="shadow p-5">
+    <div class="mb-3">
+     <label for="inputEmail4" class="form-label">Email</label>
+     <input type="email" name="email" class="form-control" id="inputEmail4">
+     <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+   </div> 
+   <div class="mb-3">
+      <label for="inputEmail4" class="form-label">Name</label>
+      <input type="text" name="text" class="form-control" id="inputEmail4">
+      <div id="emailHelp" class="form-text"></div>
+    </div> 
+    <div class="mb-3">
+      <label for="inputEmail4" class="form-label">Phone</label>
+      <input type="tel" name="tel" class="form-control" id="inputEmail4">
+      <div id="emailHelp" class="form-text"></div>
+    </div> 
+   
+  
+    <div class="mb-3">
+     <label for="inputPassword1" class="form-label">Password</label>
+     <input type="password" name="password" class="form-control" id="inputPassword1">
+    </div>
+  
+    <div class="text-end">
+     <button type="submit" class="btn btn-danger">Submit</button>
+    </div>
+    <br>
+    <div class="text-center text-primary fw-bold"><small>Existing User ? <a href="/login"
+       class="text-danger">Login Now</a> </small></div>
+    <p class="alert alert-danger my-3">{{error}}</p>
+   </form>
+  </div>
+ </div>
+</div>
+{% endblock main_content %}
+
+<!-- 7477031963 rahul cefe -->

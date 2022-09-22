@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Buy Now{% endblock title %}
+{% block main_content %}
+<div class="container my-5">
+ <div class="row">
+    {%for order in orders_obj%}
+ <h3>{{loop.index}}</h3>
+ <p>Order Id: {{ order.id}}</p>
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+         {% for product in order.order_placed%}
+         <div class="row">
+            <h3 class="d-grid"><a href="{{order.orders_obj}}">{{product.product.title}}</a></h3>
+            <img src="/{{ product.product.product_image}}" />
+            </div>
+           
+      {% endfor %}
+   </ul>
+   <ul>
+      <li>
+         <li class="d-grid"><a href="" class="btn btn-primary">{{order.status}}</a></li>
+
+      </li>
+      
+   </ul>
+  </div>
+  <!-- <div class="col-sm-9 offset-sm-1">
+   <div class="row">
+    <div class="col-sm-6">Order</div>
+   </div>
+  </div> -->
+  {%endfor%}
+
+ </div>
+</div>
+{% endblock main_content %}
